@@ -12,7 +12,15 @@ const Clock = () => {
   }, [])
 
   return (
-    <div>Clock</div>
+    <span suppressHydrationWarning >
+      {
+        daysOfTheWeek[time.getDay()]
+        + ' - ' +
+        time.toLocaleDateString() +
+        ' - ' +
+        time.toLocaleTimeString('ru-RU', { hour: "2-digit", minute: "2-digit" })
+      }
+    </span>
   )
 }
 
