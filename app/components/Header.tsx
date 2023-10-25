@@ -3,10 +3,10 @@ import Clock from "./Clock"
 const Header = () => {
 
   return (
-    <div className="flex flex-col text-2xl justify-center items-center bg-gray-300">
-      <span>Название ресторана</span>
+    <div className="flex flex-col text-2xl justify-center items-center">
+      <span >Пироги номер один</span>
       <Clock />
-      <span>Выручка за месяц</span>
+      <span >18'321'303 / <span className="text-base">105.05%</span></span>
     </div>
   )
 }
