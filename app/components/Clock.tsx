@@ -8,7 +8,7 @@ const Clock = () => {
 
   useEffect(() => {
     const timer = setInterval(() => setTime(new Date()), 1000)
-    return clearInterval(timer)
+    return () => clearInterval(timer)
   }, [])
 
   return (
