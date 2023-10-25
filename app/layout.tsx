@@ -17,8 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={roboto.className}>
-        <div className='bg-gray-100 h-[100dvh]'>
+      <body className={roboto.className + ' h-screen'}>
+        <div className='bg-gray-100 min-h-full'>
           <Header />
           {children}
         </div>
