@@ -1,7 +1,13 @@
+import Clock from "./Clock"
 
 const Header = () => {
+
   return (
-    <div>Header</div>
+    <div className="flex justify-around">
+      <span>Название ресторана</span>
+      <Clock />
+      <span>Выручка за месяц</span>
+    </div>
   )
 }
 
