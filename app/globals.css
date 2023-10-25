@@ -17,3 +17,7 @@
 body {
   color: rgb(var(--foreground-rgb));
 }
+
+.cardItem {
+  @apply bg-white w-full h-56 text-center rounded-md;
+}
