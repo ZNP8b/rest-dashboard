@@ -6,6 +6,11 @@ const Clock = () => {
   const [time, setTime] = useState(new Date())
   const daysOfTheWeek = ['ВС', 'ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ']
 
+  useEffect(() => {
+    const timer = setInterval(() => setTime(new Date()), 1000)
+    return clearInterval(timer)
+  }, [])
+
   return (
     <div>Clock</div>
   )
