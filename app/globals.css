@@ -19,5 +19,5 @@ body {
 }
 
 .cardItem {
-  @apply flex flex-col gap-4 pb-12 bg-white w-full h-fit text-center border-2 border-solid border-zinc-700/30;
+  @apply flex flex-col gap-4 pb-12 bg-white w-full h-full text-center border-2 border-solid border-zinc-700/30;
 }
