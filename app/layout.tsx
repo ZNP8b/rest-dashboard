@@ -17,8 +17,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={poppins.className + ' h-screen'}>
-        <div className='bg-gray-200 min-h-full'>
+      <body className={poppins.className + ' h-screen box-border'}>
+        <div className='bg-gray-200 min-h-full relative'>
           <Header />
           {children}
         </div>
