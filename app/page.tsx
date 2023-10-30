@@ -2,7 +2,21 @@
 export default function Home() {
   return (
     <main>
-      Main dashboard
+
+
+      <div>
+
+        {/* Карточки слева */}
+        <div></div>
+        {/* Карточки по центру */}
+        <div></div>
+        {/* Карточка справа */}
+        <div></div>
+
+      </div>
+
+
+
     </main>
   )
 }
