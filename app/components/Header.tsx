@@ -1,3 +1,4 @@
+import Clock from "./Clock"
 
 const Header = () => {
   return (
@@ -5,7 +6,7 @@ const Header = () => {
     lg:flex-row lg:justify-between lg:px-10 lg:text-3xl
     xl:px-20 xl:text-4xl">
       <span>Пироги номер один</span>
-      <span>Компонент часов</span>
+      <Clock />
       <span>18'321'303
         <span className="text-base xl:text-2xl">
           {' '}/ 105.05%
