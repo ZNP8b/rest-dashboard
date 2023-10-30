@@ -2,8 +2,44 @@
 @tailwind components;
 @tailwind utilities;
 
+.CardWrapper {
+  @apply flex flex-col 
+  lg:grid 
+  lg:grid-cols-3
+  xl:grid-cols-4 xl:grid-rows-3 gap-2 p-4 h-[calc(100vh-90px)]
+}
 
-.cardItem {
+.CardItem {
   @apply bg-white p-2 border-gray-400/60 border-[3px]
 }
 
+.CardItem-1 {
+  @apply CardItem
+}
+
+.CardItem-2 {
+  @apply CardItem col-start-1 row-start-2
+}
+
+.CardItem-3 {
+  @apply CardItem col-start-1 row-start-3
+}
+
+.CardItem-4 {
+  @apply CardItem col-start-2 row-start-1
+}
+
+.CardItem-5 {
+  @apply lg:col-start-2 lg:row-start-2 
+  CardItem xl:col-start-3 xl:row-start-1
+}
+
+.CardItem-6 {
+  @apply lg:col-start-3 lg:row-start-1 lg:row-span-3
+  CardItem xl:col-span-2 xl:row-span-2 xl:col-start-2 row-start-2
+}
+
+.CardItem-7 {
+  @apply lg:col-start-2 lg:row-start-3
+  CardItem xl:row-span-3 xl:col-start-4 xl:row-start-1
+}
