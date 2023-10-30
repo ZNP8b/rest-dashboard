@@ -8,7 +8,7 @@ const Header = () => {
       <span>Компонент часов</span>
       <span>18'321'303
         <span className="text-base xl:text-2xl">
-          / 105.05%
+          {' '}/ 105.05%
         </span>
       </span>
     </div>
