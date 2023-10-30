@@ -6,7 +6,11 @@ const Header = () => {
     xl:px-20 xl:text-4xl">
       <span>Пироги номер один</span>
       <span>Компонент часов</span>
-      <span>18'321'303 / 105.05%</span>
+      <span>18'321'303
+        <span className="text-base xl:text-2xl">
+          / 105.05%
+        </span>
+      </span>
     </div>
   )
 }
