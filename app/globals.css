@@ -5,12 +5,20 @@
 .CardWrapper {
   @apply flex flex-col 
   lg:grid 
-  lg:grid-cols-3
+  lg:grid-cols-3 lg:grid-rows-3
   xl:grid-cols-4 xl:grid-rows-3 gap-2 p-4 h-[calc(100vh-90px)]
 }
 
 .CardItem {
-  @apply bg-white p-2 border-gray-400/60 border-[3px]
+  @apply bg-white border-gray-400/60 border-[3px]
+}
+
+.CardHeader {
+  @apply text-center bg-orange-300 p-2
+}
+
+.CardContent {
+  @apply flex flex-col gap-4 justify-center p-10
 }
 
 .CardItem-1 {
