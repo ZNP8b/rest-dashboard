@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 .CardWrapper {
-  @apply flex flex-col 
+  @apply flex flex-col
   lg:grid 
   lg:grid-cols-3 lg:grid-rows-3
   xl:grid-cols-4 xl:grid-rows-3 gap-2 p-4 h-[calc(100vh-90px)]
@@ -14,11 +14,12 @@
 }
 
 .CardHeader {
-  @apply text-center bg-orange-300 p-2
+  @apply text-center py-2 md:text-xl lg:text-lg xl:text-xl
 }
 
 .CardContent {
-  @apply flex flex-col gap-4 justify-center p-10
+  @apply flex flex-col gap-4 justify-center items-center py-5 pr-4
+  lg:py-10
 }
 
 .CardItem-1 {
