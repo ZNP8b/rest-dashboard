@@ -1,4 +1,5 @@
 import Card from "./Card"
+import WeekTable from "./WeekTable"
 
 
 const data = [
@@ -55,6 +56,7 @@ const Cards = () => {
 
       <div className="CardItem-6">
         <h1 className="CardHeader bg-blue-200">Неделя</h1>
+        <WeekTable />
       </div>
 
       <div className="CardItem-7">
