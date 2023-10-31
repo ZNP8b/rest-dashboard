@@ -22,18 +22,16 @@ const data = [
   },
   {
     title: 'Выручка',
-    todayAmount: '',
-    prevAmount: '',
-    networkAverage: ''
+    todayAmount: '40000',
+    prevAmount: '40000',
+    networkAverage: '40000'
   },
   {
     title: 'Средний чек',
-    todayAmount: '',
-    prevAmount: '',
-    networkAverage: ''
+    todayAmount: '500000',
+    prevAmount: '500000',
+    networkAverage: '500000'
   },
-
-
 ]
 
 
@@ -56,11 +54,11 @@ const Cards = () => {
       }
 
       <div className="CardItem-6">
-        <h1 className="CardHeader">Неделя</h1>
+        <h1 className="CardHeader bg-blue-200">Неделя</h1>
       </div>
 
       <div className="CardItem-7">
-        <h1 className="CardHeader">Предзаказы</h1>
+        <h1 className="CardHeader bg-green-200">Предзаказы</h1>
       </div>
     </div>
 
