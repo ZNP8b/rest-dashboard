@@ -4,7 +4,10 @@ const Card = ({ index, title, todayAmount, prevAmount, networkAverage }: { index
     <div className={`CardItem-${index + 1}`}>
 
       {/* Заголовок карточки */}
-      <h1 className="CardHeader">{title}</h1>
+      <h1 className={`CardHeader 
+      ${index < 3 ? 'bg-orange-200' : 'bg-blue-200'}`}>
+        {title}
+      </h1>
 
       {/* Контент карточки */}
       <div className="CardContent">
