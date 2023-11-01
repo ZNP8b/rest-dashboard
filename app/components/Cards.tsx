@@ -1,4 +1,5 @@
 import Card from "./Card"
+import Preorders from "./Preorders"
 import WeekTable from "./WeekTable"
 
 
@@ -61,6 +62,7 @@ const Cards = () => {
 
       <div className="CardItem-7">
         <h1 className="CardHeader bg-green-200">Предзаказы</h1>
+        <Preorders />
       </div>
     </div>
 
