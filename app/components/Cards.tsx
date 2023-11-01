@@ -44,17 +44,36 @@ const Cards = () => {
 
   const [data, setData] = useState([
     {
-      title: '',
-      todayAmount: '',
-      prevAmount: '',
-      networkAverage: ''
-    }
+      title: 'Загрузка',
+      todayAmount: 'Загрузка',
+      prevAmount: 'Загрузка',
+      networkAverage: 'Загрузка'
+    },
+    {
+      title: 'Загрузка',
+      todayAmount: 'Загрузка',
+      prevAmount: 'Загрузка',
+      networkAverage: 'Загрузка'
+    },
+    {
+      title: 'Загрузка',
+      todayAmount: 'Загрузка',
+      prevAmount: 'Загрузка',
+      networkAverage: 'Загрузка'
+    },
+    {
+      title: 'Загрузка',
+      todayAmount: 'Загрузка',
+      prevAmount: 'Загрузка',
+      networkAverage: 'Загрузка'
+    },
+    {
+      title: 'Загрузка',
+      todayAmount: 'Загрузка',
+      prevAmount: 'Загрузка',
+      networkAverage: 'Загрузка'
+    },
   ])
-
-  useEffect(() => {
-
-
-  }, [])
 
   useEffect(() => {
     axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/dashboard`).then(response => {
