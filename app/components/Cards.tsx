@@ -57,11 +57,11 @@ const Cards = () => {
   }, [])
 
   useEffect(() => {
-    axios.get('https://6541b454f0b8287df1feaad2.mockapi.io/api/dashboard').then(response => {
+    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/dashboard`).then(response => {
       setData(response.data)
     });
     const timer = setInterval(() => {
-      axios.get('https://6541b454f0b8287df1feaad2.mockapi.io/api/dashboard').then(response => {
+      axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/dashboard`).then(response => {
         setData(response.data)
       });
     }, 60000)
