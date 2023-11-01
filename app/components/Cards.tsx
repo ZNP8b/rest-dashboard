@@ -1,43 +1,73 @@
+'use client'
+
+import { useEffect, useState } from "react";
 import Card from "./Card"
 import Preorders from "./Preorders"
 import WeekTable from "./WeekTable"
+import axios from 'axios';
 
-
-const data = [
-  {
-    title: 'Среднее время приготовления',
-    todayAmount: '10000',
-    prevAmount: '10000',
-    networkAverage: '10000'
-  },
-  {
-    title: 'Среднее время на полке',
-    todayAmount: '20000',
-    prevAmount: '20000',
-    networkAverage: '20000'
-  },
-  {
-    title: 'Среднее время доставки',
-    todayAmount: '30000',
-    prevAmount: '30000',
-    networkAverage: '30000'
-  },
-  {
-    title: 'Выручка',
-    todayAmount: '40000',
-    prevAmount: '40000',
-    networkAverage: '40000'
-  },
-  {
-    title: 'Средний чек',
-    todayAmount: '500000',
-    prevAmount: '500000',
-    networkAverage: '500000'
-  },
-]
+// const data = [
+//   {
+//     title: 'Среднее время приготовления',
+//     todayAmount: '10000',
+//     prevAmount: '10000',
+//     networkAverage: '10000'
+//   },
+//   {
+//     title: 'Среднее время на полке',
+//     todayAmount: '20000',
+//     prevAmount: '20000',
+//     networkAverage: '20000'
+//   },
+//   {
+//     title: 'Среднее время доставки',
+//     todayAmount: '30000',
+//     prevAmount: '30000',
+//     networkAverage: '30000'
+//   },
+//   {
+//     title: 'Выручка',
+//     todayAmount: '40000',
+//     prevAmount: '40000',
+//     networkAverage: '40000'
+//   },
+//   {
+//     title: 'Средний чек',
+//     todayAmount: '500000',
+//     prevAmount: '500000',
+//     networkAverage: '500000'
+//   },
+// ]
 
 
 const Cards = () => {
+
+  const [data, setData] = useState([
+    {
+      title: '',
+      todayAmount: '',
+      prevAmount: '',
+      networkAverage: ''
+    }
+  ])
+
+  useEffect(() => {
+
+
+  }, [])
+
+  useEffect(() => {
+    axios.get('https://6541b454f0b8287df1feaad2.mockapi.io/api/dashboard').then(response => {
+      setData(response.data)
+    });
+    const timer = setInterval(() => {
+      axios.get('https://6541b454f0b8287df1feaad2.mockapi.io/api/dashboard').then(response => {
+        setData(response.data)
+      });
+    }, 60000)
+    return () => clearInterval(timer)
+  }, [])
+
   return (
 
     <div className="CardWrapper">
@@ -47,6 +77,7 @@ const Cards = () => {
       {
         data.map((item, index) => (
           <Card
+            key={index}
             index={index}
             title={item.title}
             todayAmount={item.todayAmount}
