@@ -72,8 +72,8 @@ const WeekTable = () => {
 
         <tbody>
           {
-            data.map((item) => (
-              <tr className="even:bg-gray-50 odd:bg-white border-b dark:bg-gray-900 dark:border-gray-700">
+            data.map((item, index) => (
+              <tr key={index} className="even:bg-gray-50 odd:bg-white border-b dark:bg-gray-900 dark:border-gray-700">
                 <th scope="row" className="px-4 py-3 font-medium text-gray-900 whitespace-nowrap dark:text-white">
                   {item.date}
                 </th>
