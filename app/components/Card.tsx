@@ -14,19 +14,19 @@ const Card = ({ index, title, todayAmount, prevAmount, networkAverage }: { index
 
         <div className="flex flex-col text-center">
           <span className="text-sm text-blue-700">Сегодня</span>
-          <span className="text-3xl lg:text-4xl text-blue-700">{todayAmount}</span>
+          <span className={`${todayAmount === 'Загрузка' ? '!text-2xl' : 'text-3xl'} lg:text-4xl text-blue-700`}>{todayAmount}</span>
         </div>
 
         <div className="flex text-center justify-center items-center gap-6">
 
           <div className="flex flex-col">
             <span className="text-sm">Предыдущий период</span>
-            <span className="text-3xl lg:text-4xl">{prevAmount}</span>
+            <span className={`${prevAmount === 'Загрузка' ? '!text-2xl' : 'text-3xl'} lg:text-4xl`}>{prevAmount}</span>
           </div>
 
           <div className="flex flex-col">
             <span className="text-sm">Среднее по сети</span>
-            <span className="text-3xl lg:text-4xl">{networkAverage}</span>
+            <span className={`${networkAverage === 'Загрузка' ? '!text-2xl' : 'text-3xl'} lg:text-4xl`}>{networkAverage}</span>
           </div>
 
         </div>
