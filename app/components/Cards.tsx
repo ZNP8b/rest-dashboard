@@ -6,39 +6,6 @@ import Preorders from "./Preorders"
 import WeekTable from "./WeekTable"
 import axios from 'axios';
 
-// const data = [
-//   {
-//     title: 'Среднее время приготовления',
-//     todayAmount: '10000',
-//     prevAmount: '10000',
-//     networkAverage: '10000'
-//   },
-//   {
-//     title: 'Среднее время на полке',
-//     todayAmount: '20000',
-//     prevAmount: '20000',
-//     networkAverage: '20000'
-//   },
-//   {
-//     title: 'Среднее время доставки',
-//     todayAmount: '30000',
-//     prevAmount: '30000',
-//     networkAverage: '30000'
-//   },
-//   {
-//     title: 'Выручка',
-//     todayAmount: '40000',
-//     prevAmount: '40000',
-//     networkAverage: '40000'
-//   },
-//   {
-//     title: 'Средний чек',
-//     todayAmount: '500000',
-//     prevAmount: '500000',
-//     networkAverage: '500000'
-//   },
-// ]
-
 
 const Cards = () => {
 
@@ -75,17 +42,117 @@ const Cards = () => {
     },
   ])
 
+
+
+
   useEffect(() => {
-    axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/dashboard`).then(response => {
-      setData(response.data)
-    });
-    const timer = setInterval(() => {
-      axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/dashboard`).then(response => {
-        setData(response.data)
+    axios.post(`${process.env.NEXT_PUBLIC_API_URL}/v1/dashboard`, {
+      build_summary: false,
+      date_range: "2023-11-01",
+      report_type: "SALES"
+    })
+      .then(function (response) {
+        setData([
+          {
+            title: 'Среднее время приготовления',
+            todayAmount: response.data.data.average_cooking_time.today,
+            prevAmount: response.data.data.average_cooking_time.prev_amount,
+            networkAverage: response.data.data.average_cooking_time.network_average
+          },
+          {
+            title: 'Среднее время на полке',
+            todayAmount: response.data.data.average_guest_wait_time
+              .today,
+            prevAmount: response.data.data.average_guest_wait_time
+              .prev_amount,
+            networkAverage: response.data.data.average_guest_wait_time
+              .network_average
+          },
+          {
+            title: 'Среднее время доставки',
+            todayAmount: response.data.data.average_delivery_time.today,
+            prevAmount: response.data.data.average_delivery_time.prev_amount,
+            networkAverage: response.data.data.average_delivery_time.network_average
+          },
+          {
+            title: 'Выручка',
+            todayAmount: response.data.data.sum.today,
+            prevAmount: response.data.data.sum.prev_amount,
+            networkAverage: response.data.data.sum.network_average
+          },
+          {
+            title: 'Средний чек',
+            todayAmount: response.data.data.average_sum.today,
+            prevAmount: response.data.data.average_sum.prev_amount,
+            networkAverage: response.data.data.average_sum.network_average
+          },
+        ])
+      })
+      .catch(function (error) {
+        console.log(error)
       });
-    }, 60000)
+
+    const timer = setInterval(() => {
+      axios.post(`${process.env.NEXT_PUBLIC_API_URL}/v1/dashboard`, {
+        build_summary: false,
+        date_range: "2023-11-01",
+        report_type: "SALES"
+      })
+        .then(function (response) {
+          setData([
+            {
+              title: 'Среднее время приготовления',
+              todayAmount: response.data.data.average_cooking_time.today,
+              prevAmount: response.data.data.average_cooking_time.prev_amount,
+              networkAverage: response.data.data.average_cooking_time.network_average
+            },
+            {
+              title: 'Среднее время на полке',
+              todayAmount: response.data.data.average_guest_wait_time
+                .today,
+              prevAmount: response.data.data.average_guest_wait_time
+                .prev_amount,
+              networkAverage: response.data.data.average_guest_wait_time
+                .network_average
+            },
+            {
+              title: 'Среднее время доставки',
+              todayAmount: response.data.data.average_delivery_time.today,
+              prevAmount: response.data.data.average_delivery_time.prev_amount,
+              networkAverage: response.data.data.average_delivery_time.network_average
+            },
+            {
+              title: 'Выручка',
+              todayAmount: response.data.data.sum.today,
+              prevAmount: response.data.data.sum.prev_amount,
+              networkAverage: response.data.data.sum.network_average
+            },
+            {
+              title: 'Средний чек',
+              todayAmount: response.data.data.average_sum.today,
+              prevAmount: response.data.data.average_sum.prev_amount,
+              networkAverage: response.data.data.average_sum.network_average
+            },
+          ])
+        })
+        .catch(function (error) {
+          console.log(error)
+        });
+    }, 3600000)
     return () => clearInterval(timer)
   }, [])
+
+  // useEffect(() => {
+  //   axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/dashboard`).then(response => {
+  //     setData(response.data)
+  //   });
+  //   const timer = setInterval(() => {
+  //     axios.get(`${process.env.NEXT_PUBLIC_API_URL}/api/dashboard`).then(response => {
+  //       setData(response.data)
+  //     });
+  //   }, 60000)
+  //   return () => clearInterval(timer)
+  // }, [])
 
   return (
 
