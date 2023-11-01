@@ -54,8 +54,8 @@ const data = [
 
 const WeekTable = () => {
   return (
-    <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
-      <table className="w-full text-center text-sm text-gray-500 dark:text-gray-400">
+    <div className="relative overflow-x-auto shadow-sm h-[calc(100%-45px)] sm:rounded-lg">
+      <table className="w-full h-full text-center text-sm text-gray-500 dark:text-gray-400">
         <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
           <tr >
             <th scope="col" className="px-5 py-2">
